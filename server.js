@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 app.get('/notes', async (req, res) => {
   if (mongoose.connection.readyState !== 1) {
     console.error('MongoDB is not connected. readyState:', mongoose.connection.readyState);
-    return res.status(503).json({ message: 'MongoDB not connected.' });
+    return res.status(503).json({ message: 'Backend is not connected to the database.' });
   }
 
   try {
