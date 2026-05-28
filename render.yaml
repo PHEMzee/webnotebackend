@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: morehope-webnote-api
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: MONGO_URI
+        value: mongodb+srv://MoreHope:CbDvII0JA8tq4TQU@cluster0.wagkfi6.mongodb.net/?appName=Cluster0
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
