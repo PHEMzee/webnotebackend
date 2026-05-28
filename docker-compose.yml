@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  webnote-api:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=${MONGO_URI}
+      - PORT=5000
+      - NODE_ENV=production
+    restart: unless-stopped
+
+  # Optional: MongoDB service (if not using MongoDB Atlas)
+  # mongodb:
+  #   image: mongo:latest
+  #   ports:
+  #     - "27017:27017"
+  #   environment:
+  #     - MONGO_INITDB_ROOT_USERNAME=root
+  #     - MONGO_INITDB_ROOT_PASSWORD=password
+  #   volumes:
+  #     - mongodb-data:/data/db
+  #
+  # volumes:
+  #   mongodb-data:
